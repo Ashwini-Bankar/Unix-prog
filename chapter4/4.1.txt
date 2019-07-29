@@ -1,0 +1,5 @@
+4.1 Modify the program in Figure 4.3 to use stat instead of lstat. What changes if one of the command-line arguments is a symbolic link?
+
+ANS:
+	if we are using lstat and we pass symbolic link file the it will gives you an information about symbolic link. and it tell you the file type is symbolic link
+	Whereas instead if latat if we use stat and we pass symbolic link as command line argument it will tell us that this file is regular file not a symbolic link.

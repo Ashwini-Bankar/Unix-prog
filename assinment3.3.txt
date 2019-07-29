@@ -1,0 +1,8 @@
+Q 3.3 Assume that a process executes the following three function calls: 
+fd1= open(pathname, oflags); 
+fd2 = dup(fd1); 
+fd3 = open(pathname, oflags); 
+Draw the resulting picture, similar to Figure 3.8. Which descriptors are affected by an fcntl on fd1 with a command of F_SETFD? Which descriptors are affected by an fcntl on fd1 with a command of F_SETFL? 
+
+Ans:  Each call to open gives us a new file table entry. Here open references the same file and these file table entries point to same v-node.
+The dup() function creat an copy of fd1. so it references the exixting file table entry. An F_SETFD on fd1 affects only the file descriptor flags for fd1. But an F_SETFL on fd1 affects the file table entry that both fd1 and fd2 point to.

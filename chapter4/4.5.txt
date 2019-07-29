@@ -1,0 +1,6 @@
+4.5 In Section 4.12, we said that a file size of 0 is valid for a regular file. We also said that the st_size field is defined for directories and symbolic links. Should we ever see a file size of 0 for a directory or a symbolic link?
+
+ANS:
+	For a regular file, a file size of 0 is allowed. We’ll get an end-of-file indication on the first read of the file. For a directory, the file size is usually a multiple of a number, such as 16 or 512.
+	For a symbolic link, the file size is the number of bytes in the filename. For example, in the following case, the file size of 7 is the length of the pathname 
+usr/lib:lrwxrwxrwx 1 root 7 Sep 25 07:14 lib -> usr/lib

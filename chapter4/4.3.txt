@@ -1,0 +1,7 @@
+4.3 Verify that turning off user-read permission for a file that you own denies your access to the file.
+
+ANS:
+	chmod 355 hello2.txt
+
+	If i write command cat hello2.txt
+	it will print a warning message that file access permission denies

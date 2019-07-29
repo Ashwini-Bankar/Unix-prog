@@ -1,0 +1,29 @@
+Q3.5 The Bourne shell, Bourne-again shell, and Korn shell notation
+digit1>&digit2
+says to redirect descriptor digit1 to the same file as descriptor digit2. What is the difference
+between the two commands shown below? (Hint: The shells process their command lines
+from left to right.)
+./a.out > outfile 2>&1
+./a.out 2>&1 > outfile
+
+
+ANS:
+    
+    -The keyboard is the standard input device while your screen is the standard output device
+    -">" is the output redirection operator. ">>" appends output to an existing file
+    -"<" is the input redirection operator
+    -">&"re-directs output of one file to another.
+    -You can re-direct error using its corresponding File Descriptor 2.
+
+
+1.   ./a.out > outfile 2>&1
+		When we execute above command, the output and the errors which we will get stored in file "outfile"
+		./a.out is an executable file. when we execute this file either we will get output or sometime we will get error or both.
+		>2 represent stansered error and >1 represent standard output. so the output and the error which we will get, that stored in 
+		file "outfile.". Whene we execute a command "cat outfile" it shows the contents of file.
+
+
+2.   ./a.out 2>&1>outfile
+		It mean that standerd output descriptor first copied onto standared error descriptor and then standared error redirect to 
+		outfile.   
+

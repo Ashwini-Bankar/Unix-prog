@@ -1,0 +1,10 @@
+Q 3.4 The following sequence of code has been observed in various programs: 
+dup2(fd,0); 
+dup2(fd,1); 
+dup2(fd,2); 
+if (fd > 2) close(fd); 
+To see why the if test is needed, assume that fd is 1 and draw a picture of what happens to the three descriptor entries and the corresponding file table entry with each call to dup2. Then assume that fd is 3 and draw the same picture.
+
+ANS:
+If fd is 1, then the dup2(fd, 1) returns 1 without closing descriptor 1. After the three calls to dup2, all three descriptors point to the same file table entry. Nothing needs to be closed.
+If fd is 3, however, after the three calls to dup2, four descriptors are pointing to the same file table entry. In this case, we need to close descriptor 3.

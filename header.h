@@ -1,0 +1,2 @@
+void readFile();
+void copy();
